@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 38% 96%;
+    --foreground: 208 38% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 208 38% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 208 38% 14%;
+    --primary: 187 52% 24%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 188 22% 91%;
+    --secondary-foreground: 187 52% 22%;
+    --muted: 40 24% 90%;
+    --muted-foreground: 206 18% 39%;
+    --accent: 23 76% 57%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 76% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 206 24% 84%;
+    --input: 206 24% 84%;
+    --ring: 187 52% 24%;
+    --hero-panel: 207 44% 15%;
+    --hero-panel-2: 188 49% 23%;
+    --hero-panel-foreground: 42 29% 95%;
+    --hero-panel-muted: 204 24% 78%;
+  }
+
+  html[data-theme="dark"] {
+    --background: 219 24% 9%;
+    --foreground: 40 28% 94%;
+    --card: 218 22% 13%;
+    --card-foreground: 40 28% 94%;
+    --popover: 218 22% 13%;
+    --popover-foreground: 40 28% 94%;
+    --primary: 185 49% 59%;
+    --primary-foreground: 210 32% 11%;
+    --secondary: 217 17% 18%;
+    --secondary-foreground: 42 25% 92%;
+    --muted: 218 17% 16%;
+    --muted-foreground: 211 15% 69%;
+    --accent: 23 82% 62%;
+    --accent-foreground: 210 32% 11%;
+    --destructive: 0 72% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 218 15% 24%;
+    --input: 218 15% 24%;
+    --ring: 185 49% 59%;
+    --hero-panel: 221 34% 11%;
+    --hero-panel-2: 190 40% 18%;
+    --hero-panel-foreground: 42 21% 94%;
+    --hero-panel-muted: 212 14% 72%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-body text-foreground antialiased;
+    background-attachment: fixed;
+    background-image:
+      radial-gradient(circle at top left, rgba(18, 88, 97, 0.13), transparent 30%),
+      radial-gradient(circle at 82% 0%, rgba(226, 131, 77, 0.12), transparent 24%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 28%);
+    transition:
+      background-color 180ms ease,
+      color 180ms ease,
+      border-color 180ms ease;
+  }
+
+  html[data-theme="dark"] body {
+    background-image:
+      radial-gradient(circle at top left, rgba(53, 165, 176, 0.16), transparent 28%),
+      radial-gradient(circle at 82% 0%, rgba(232, 137, 72, 0.14), transparent 22%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 26%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  ::selection {
+    background-color: hsl(var(--accent) / 0.24);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-panel {
+    @apply border border-border/70 bg-card/80 shadow-soft backdrop-blur-xl;
+  }
+
+  .hero-panel {
+    background:
+      radial-gradient(circle at top right, hsl(var(--accent) / 0.2), transparent 36%),
+      linear-gradient(135deg, hsl(var(--hero-panel)), hsl(var(--hero-panel-2)));
+    color: hsl(var(--hero-panel-foreground));
+  }
+
+  .hero-panel-muted {
+    color: hsl(var(--hero-panel-muted));
+  }
+}

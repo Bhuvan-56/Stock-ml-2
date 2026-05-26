@@ -1,11 +1,2 @@
-# requirements.txt
-
-Flask
-pandas
-numpy
-scikit-learn
-tensorflow
-yfinance
-plotly
-matplotlib
-gunicorn
+# Production install for the new StockML backend package.
+.

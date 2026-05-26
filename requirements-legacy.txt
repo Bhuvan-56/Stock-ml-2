@@ -1,0 +1,10 @@
+# Legacy dependency list for the pre-migration Flask application.
+Flask
+pandas
+numpy
+scikit-learn
+tensorflow
+yfinance
+plotly
+matplotlib
+gunicorn
